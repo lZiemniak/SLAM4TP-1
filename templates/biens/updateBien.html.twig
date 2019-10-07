@@ -1,0 +1,147 @@
+
+{% extends "base.html.twig" %}
+{% block title %}
+    Update Bien
+{% endblock %}
+{% block body %}
+<center>
+<div class="well">
+    {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+    {# Les erreurs générales du formulaire. #}
+    {{ form_errors(form) }}
+    <h3><center>--Mise a jour du Bien--</center></h3>
+    <div class="well">
+        {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+        {# Les erreurs générales du formulaire. #}
+        {{ form_errors(form) }}
+        <div class="form-group">
+            {# Génération du label. #}
+            {{ form_label(form.nb_piece, "Nombre de Pièces :", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+            {# Affichage des erreurs pour ce champ précis. #}
+            {{ form_errors(form.nb_piece) }}
+            <div class="col-sm-4">
+                {# Génération de l'input. #}
+                {{ form_widget(form.nb_piece, {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+        </div>
+        <div class="form-group">
+            {# Génération du label. #}
+            {{ form_label(form.nb_chambre,  "Nombre de Chambres:", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+            {# Affichage des erreurs pour ce champ précis. #}
+            {{ form_errors(form.nb_chambre) }}
+            <div class="col-sm-4">
+                {# Génération de l'input. #}
+                {{ form_widget(form.nb_chambre, {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+        </div>
+        <div class="form-group">
+            {# Génération du label. #}
+            {{ form_label(form.superficie, "Superficie :", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+            {# Affichage des erreurs pour ce champ précis. #}
+            {{ form_errors(form.superficie) }}
+            <div class="col-sm-4">
+                {# Génération de l'input. #}
+                {{ form_widget(form.superficie, {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+        </div>
+        <div class="form-group">
+            {# Génération du label. #}
+            {{ form_label(form.prix, "Prix :", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+            {# Affichage des erreurs pour ce champ précis. #}
+            {{ form_errors(form.prix) }}
+            <div class="col-sm-4">
+                {# Génération de l'input. #}
+                {{ form_widget(form.prix, {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+        </div>
+        <div class="form-group">
+            {# Génération du label. #}
+            {{ form_label(form.chauffage, "Chauffage :", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+            {# Affichage des erreurs pour ce champ précis. #}
+            {{ form_errors(form.chauffage) }}
+            <div class="col-sm-4">
+                {# Génération de l'input. #}
+                {{ form_widget(form.chauffage, {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+        </div>
+        <div class="form-group">
+            {# Génération du label. #}
+            {{ form_label(form.annee, "annee :", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+            {# Affichage des erreurs pour ce champ précis. #}
+            {{ form_errors(form.annee) }}
+            <div class="col-sm-4">
+                {# Génération de l'input. #}
+                {{ form_widget(form.annee, {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+        </div>
+            
+        <div class="form-group">
+            {# Génération du label. #}
+            {{ form_label(form.localisation, "Localisation :", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+            {# Affichage des erreurs pour ce champ précis. #}
+            {{ form_errors(form.localisation) }}
+            <div class="col-sm-4">
+                {# Génération de l'input. #}
+                {{ form_widget(form.localisation, {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+        </div>
+        <div class="form-group">
+            {# Génération du label. #}
+            {{ form_label(form.etat, "État :", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+            {# Affichage des erreurs pour ce champ précis. #}
+            {{ form_errors(form.etat) }}
+            <div class="col-sm-4">
+                {# Génération de l'input. #}
+                {{ form_widget(form.etat, {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+        </div>
+        <div class="form-group">
+            {# Génération du label. #}
+            {{ form_label(form.type, "Type :", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+            {# Affichage des erreurs pour ce champ précis. #}
+            {{ form_errors(form.type) }}
+            <div class="col-sm-4">
+                {# Génération de l'input. #}
+                {{ form_widget(form.type, {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+        </div>
+            
+        
+        {# Pour le bouton, pas de label ni d'erreur, on affiche juste le widget #}
+        <div class="row">
+            <div class="container">
+                <label class="col-md-4 control-label"></label>
+                <div class="col-md-4">
+                    {{ form_widget(form.Valider, {'attr': {'class': 'btn btn-success'}}) }}
+                    <a href="/Afficher_bien">Annuler</a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+    {% if app.session.flashBag.has('success') %}
+    <div class="alert alert-success">
+        {% for msg in app.session.flashBag.get('success') %}
+            <a>Opération Réussie</a>
+        {% endfor %}
+    </div>
+    {% endif %}
+    
+    {{ form_rest(form) }}
+    {# Fermeture de la balise <form> du formulaire HTML #}
+    
+    {{ form_end(form) }}
+    
+</div>{# empty Twig template #}
+</center>
+{% endblock %}

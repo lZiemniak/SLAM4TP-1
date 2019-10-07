@@ -1,0 +1,48 @@
+{% extends "base.html.twig" %}
+{% block title %}
+Formulaire Ajout Bien
+{% endblock %}
+{% block body %}
+    
+    <h3 align="center" >---Affichage des Biens---</h3>
+    
+    <table  style ="border:2px solid black; margin:auto;" align="center">
+        
+            <thead>
+                <tr style ="border:2px solid black;">
+                    <th>   Les biens: </th>
+                </tr>
+            </thead>
+            <tr style ="background-color:activecaption ; border:2px solid lightskyblue;">
+                <td  style ="border:2px solid lightskyblue;">n° du bien </td>
+                <td style ="border:2px solid lightskyblue;">Nombre de Piece</td>
+                <td style ="border:2px solid lightskyblue;">Nombre de Chambre </td>
+                <td style ="border:2px solid lightskyblue;">Superficie du bien </td>
+                <td style ="border:2px solid lightskyblue;">Prix  </td>
+                <td style ="border:2px solid lightskyblue;">Chauffage </td>
+                <td style ="border:2px solid lightskyblue;">Annee </td>
+                <td style ="border:2px solid lightskyblue;">Lieu </td>
+                <td style ="border:2px solid lightskyblue;">Etat actuel </td>
+                <td style ="border:2px solid lightskyblue;">Libelle</td>
+            </tr>
+            {% for unBien in bien %}
+            <tr style ="border:2px solid black;">
+                <td style="background-color: #b49e35; border:2px solid lightskyblue;">{{ unBien.id }}</td>
+                <td style="background-color:#b49e35; border:2px solid lightskyblue;">{{ unBien.getNbPiece }}</td>
+                <td style="background-color:#b49e35; border:2px solid lightskyblue;">{{ unBien.getNbChambre }}</td>
+                <td style="background-color:#b49e35; border:2px solid lightskyblue;">{{ unBien.getSuperficie }}</td>
+                <td style="background-color:#b49e35; border:2px solid lightskyblue;">{{ unBien.getPrix }}</td>
+                <td style="background-color:#b49e35; border:2px solid lightskyblue;">{{ unBien.getChauffage }}</td>
+                <td style="background-color:#b49e35; border:2px solid lightskyblue;">{{ unBien.getAnnee }}</td>
+                <td style="background-color:#b49e35; border:2px solid lightskyblue;">{{ unBien.getLocalisation }}</td>
+                <td style="background-color:#b49e35; border:2px solid lightskyblue;">{{ unBien.getEtat }}</td>
+                <td style="background-color:#b49e35; border:2px solid lightskyblue;">{{ unBien.getType.getLibelle }}</td>
+                <td><a href="/bien/update/{{ unBien.id }}"><button type="button" class="btn btn-warning"  >Modifier</button></a></td>
+                <td><button type="button" class="btn btn-danger"  ><a href="/article/supprimer/{{ unBien.id }}">Supprimer</a></button></td>
+            </tr>
+        {% endfor %}
+        
+        
+    </table>
+    
+    {% endblock %}{# empty Twig template #}

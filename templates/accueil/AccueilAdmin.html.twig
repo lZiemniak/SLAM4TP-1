@@ -1,0 +1,82 @@
+{% extends "base.html.twig" %}
+{% block title %}
+    Accueil Admin
+{% endblock %}
+{% block body %}
+{% block menu %}
+        <nav class="navbar navbar-expand-md bg-dark">
+           <a class="navbar-brand text-primary">{{ app.session.get('login') }}</a> 
+           <div class=" navbar-collapse">
+             <ul class="navbar-nav m-auto">
+               <li class="nav-item">
+                  <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
+                       <h6>Biens</h6>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="insertionBien">Ajouter</a>
+                        
+                        <a class="dropdown-item" href="Afficher_bien">Voir les biens</a>
+                        
+                    </div>
+                  </div>
+               </li> 
+               <li class="nav-item">
+                 <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
+                       <h6>Types</h6>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="insertionType">Ajouter</a>
+                        
+                        <a class="dropdown-item" href="Afficher_type">Voir</a>
+                        
+                    </div>
+                  </div>
+               </li>
+               <li class="nav-item">
+                 <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
+                       <h6>Visites</h6>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="insertionVisites">Ajouter</a>
+                        
+                        <a class="dropdown-item" href="Afficher_visite">Voir</a>
+                        
+                    </div>
+                  </div>
+               </li>
+               <li class="nav-item">
+                 <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
+                        <h6>Visiteurs</h6>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="insertionVisiteur">Ajouter</a>
+                        
+                        <a class="dropdown-item" href="Afficher_visiteur">Voir</a>
+                        
+                    </div>
+                  </div>
+               </li>
+                   
+             </ul>
+           </div>
+       </nav>
+           
+           
+       
+{% endblock %}
+<center>
+<div class="well">
+    <h3><center>--Administrateur--</center></h3>
+    <h4>Bienvenue sur l'application web d'Immostar.</h4>
+    </br>
+    <h4>Veuillez selectionner l'action à effectuer dans la barre de navigation.</h4>
+    
+    
+    
+</div>{# empty Twig template #}
+</center>
+{% endblock %}
